@@ -1,0 +1,16 @@
+.Book-footer{
+	background-position: center;
+	background-size: cover;
+	.pagination{
+		--bs-pagination-bg: unset;
+		--bs-pagination-border-color: rgba(171, 66, 0, 0.6);
+		--bs-pagination-color: white;
+		--bs-pagination-active-bg: rgba(171, 66, 0, 0.6);
+		li{
+			min-width: 2.3vw;
+		}
+	}
+}
+
+
+

@@ -1,0 +1,17 @@
+.App-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+	.Book-header{
+		background-position: center;
+		background-size: cover;
+	}
+	div {
+		width: 100%;
+	}
+	img {
+		width: 88%;
+	}
+}

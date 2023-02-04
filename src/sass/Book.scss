@@ -1,0 +1,107 @@
+// .Book-book{
+// 	font-family: 'Gothic';
+// 	text-shadow: 0 0 1.4px rgba(0, 0, 0, 0.9);
+// 	color: black;
+// 	min-height: 1135px;
+// 	background-position: center;
+// 	background-size: cover;
+// 	.container{
+// 		color: transparent;
+// 		margin-top: 2vw;
+// 		min-height: 1053px;
+// 	}
+// 	.Left-page{
+// 		transform: rotate(-4.3deg) skew(-8.8deg);
+// 		position: relative;
+// 		top: 5vw;
+// 	}
+// 	.Right-page{
+// 		transform: rotate(4deg) skew(6.9deg);
+// 		position: relative;
+// 		left: 5vw;
+// 		top: 4vw;
+// 	}
+// 	.Active-letter {
+// 		animation: blinkingBackground 1s cubic-bezier(0, 0, 0.2, 1) infinite alternate;
+// 		border-radius: 5px;
+// 		background-color: rgba(171, 66, 0, 0.8);
+// 		transition: background-color 0.25s;
+// 	}
+
+// 	@keyframes blinkingBackground {
+// 		to {
+// 			background-color: rgba(171, 66, 0, 0);
+// 		}
+// 	}
+// 	.Incorrect-letter{
+// 		background-color: rgba(255, 0, 0, 0.7) ;
+// 		border-radius: 5px;
+// 	}
+// }
+
+
+$container-margin-top: 2vw;
+$container-min-height: 1053px;
+$left-page-transform: rotate(-4.3deg) skew(-8.8deg);
+$left-page-top: 5vw;
+$right-page-transform: rotate(4deg) skew(6.9deg);
+$right-page-left: 5vw;
+$right-page-top: 4vw;
+$book-min-height: 1135px;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.Book-book {
+	font-family: 'Gothic';
+	text-shadow: 0 0 1.4px rgba(0, 0, 0, 0.9);
+	color: black;
+	min-height: $book-min-height;
+	max-height: 10vh;
+	background-position: center;
+	background-size: cover;
+
+	.container {
+		color: transparent;
+		margin-top: $container-margin-top;
+		min-height: $container-min-height;
+	}
+
+	.Left-page {
+		transform: $left-page-transform;
+		position: relative;
+		top: $left-page-top;
+	}
+
+	.Right-page {
+		transform: $right-page-transform;
+		position: relative;
+		left: $right-page-left;
+		top: $right-page-top;
+	}
+
+	.Active-letter {
+		animation: blinkingBackground 1s cubic-bezier(0, 0, 0.2, 1) infinite alternate;
+		border-radius: 5px;
+		background-color: rgba(171, 66, 0, 0.8);
+		transition: background-color 0.25s;
+	}
+
+	@keyframes blinkingBackground {
+		to {
+			background-color: rgba(171, 66, 0, 0);
+		}
+	}
+
+	.Incorrect-letter {
+		background-color: rgba(255, 0, 0, 0.7);
+		border-radius: 5px;
+	}
+}
+
+
+
+
