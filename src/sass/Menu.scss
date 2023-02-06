@@ -1,0 +1,32 @@
+.Menu{
+	height: 100%;
+	min-height: 100vh;
+	color: orange !important;
+	.Menu-lower{
+		margin-top: 22vh;
+	}
+
+	.Center{
+		font-family: 'Great Vibes', cursive !important;
+		font-size: 4rem;
+		
+		ul{
+			list-style: none;
+			a{
+				color: orange !important;
+			}
+		}
+	}
+	.Candle-space{
+		img{
+			//transform: scale(0.5);
+			width: 50%;
+			height: 50%;
+		}
+	}
+	article{
+		color: cornsilk;
+		background-color:rgba(192, 94, 0, 0.3);
+		padding: 3rem;
+	}
+}

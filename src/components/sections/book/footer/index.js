@@ -1,11 +1,6 @@
-import image from '../../../media/bookFooter.webp';
-import { changePage } from '../../../redux/actions'
+import image from '../../../../media/bookFooter.webp';
+import { changePage } from '../../../../redux/actions'
 import { connect, dispatch } from 'react-redux';
-
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Pagination from 'react-bootstrap/Pagination';
 
 import Paginator from './paginator';
 

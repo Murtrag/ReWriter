@@ -1,7 +1,10 @@
-@use 'Book';
-@use 'Header';
-@use 'Footer';
+@use 'Menu';
+@use 'NewBook';
+
 
 html, body{
 	height: 100%;
+	@import url("https://fonts.googleapis.com/css?family=Great+Vibes&effect=fire-animation");
+	@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 }
+

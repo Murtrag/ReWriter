@@ -10,45 +10,76 @@ import React, { useRef, useEffect } from 'react';
 const Content = ({ data, activeLetter, incorrect, page }) => {
 	const leftRef = useRef(null);
 	const rightRef = useRef(null);
-	const minHeight = 800;
+	const minHeight = 835;
 	const maxHeight = 840;
-	let fontSize = 2; // rem
 
-	let prevHeight = 0;
-	function lowerFont(ref, otherRef){
-		try{
-			if (prevHeight == ref.current.clientHeight){
-				fontSize = fontSize + 0.01;
-				lowerFont(otherRef)
-			}
-			if (ref.current.clientHeight >  maxHeight) {
-				prevHeight = ref.current.clientHeight;
-				fontSize = fontSize - 0.01;
-				ref.current.style.fontSize = `${fontSize}rem`;
-				lowerFont(ref, otherRef)
-			}
-		}catch(err){}
-	}
+	// function lowerFont(ref, otherRef, prevHeight=0){
+	// 	try{
+	// 		if (prevHeight === ref.current.clientHeight){
+	// 			fontSize = fontSize + 0.01;
+	// 			ref.current.style.fontSize = `${fontSize}rem`;
+	// 			if (otherRef ===null){
+	// 			}else{
+	// 				lowerFont(otherRef, null, 0)
+	// 			}
+	// 		}
+	// 		if (ref.current.clientHeight >  maxHeight) {
+	// 			prevHeight = ref.current.clientHeight;
+	// 			fontSize = fontSize - 0.01;
+	// 			ref.current.style.fontSize = `${fontSize}rem`;
+	// 			lowerFont(ref, otherRef, prevHeight)
+	// 		}
+	// 	}catch(err){
+	// 		console.log(err)
+	// 	}
+	// }
 
-	function upperFont(ref){
-		let prevHeight = 0;
-		while (ref.current.clientHeight <  minHeight) {
-			fontSize = fontSize + 0.01;
-			ref.current.style.fontSize = `${fontSize}rem`;
-		}
-	}
+	// function upperFont(ref){
+	// 	try{
+	// 		if (ref.current.clientHeight <  minHeight) {
+	// 			ref.current.style.fontSize = `2rem`;
+	// 		}
+	// 	}catch(error){}
+	// }
 
 	useEffect(() => {
-		if(rightRef.current.clientHeight !== 0){
-			lowerFont(rightRef)
-			upperFont(rightRef)
-			lowerFont(rightRef)
-			upperFont(rightRef)
+		if(leftRef.current.clientHeight !== 0){
+			let fontSize = 2; // rem
+			leftRef.current.style.fontSize = `2rem`;
+			rightRef.current.style.fontSize = `2rem`;
+			function resize(){
+				// BOTH COLUMNS
+				while (
+					leftRef.current.clientHeight >  maxHeight
+							||
+					rightRef.current.clientHeight >  maxHeight
+				) {
+					// LEFT COLUMN
+					let prevHeight = 0;
+					while (leftRef.current.clientHeight >  maxHeight) {
+						prevHeight = leftRef.current.clientHeight;
+						fontSize -= .01;
+						leftRef.current.style.fontSize = `${fontSize}rem`;
+						if(prevHeight===leftRef.current.clientHeight){
+							break
+						}
+					}
+					// RIGHT COLUMN
+					prevHeight = 0
+					fontSize=2;
+					while (rightRef.current.clientHeight >  maxHeight) {
+						prevHeight = rightRef.current.clientHeight;
+						fontSize -= .01;
+						rightRef.current.style.fontSize = `${fontSize}rem`;
+						if(prevHeight===rightRef.current.clientHeight){
+							break
+						}
+					}
 
-			lowerFont(leftRef)
-			upperFont(leftRef)
-			lowerFont(leftRef)
-			upperFont(leftRef)
+				}
+			}
+			resize()
+
 
 		}
 	}, [page]);

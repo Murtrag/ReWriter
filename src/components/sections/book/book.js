@@ -1,7 +1,7 @@
-import image from '../../media/bookBook.webp';
+import image from '../../../media/bookBook.webp';
 
-import Content from '../content/index';
-import { pressKey, backSpace, changePage } from '../../redux/actions'
+import Content from '../../content/index';
+import { pressKey, backSpace, changePage } from '../../../redux/actions'
 
 import { connect, dispatch } from 'react-redux';
 

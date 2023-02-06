@@ -1,6 +1,12 @@
-import image from '../../media/bookHeader.webp';
-import { changeBook } from '../../redux/actions'
+import image from '../../../media/bookHeader.webp';
+import { changeBook } from '../../../redux/actions'
 import { connect, dispatch } from 'react-redux';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import ButtonMenu from '../../button_menu';
+
 const Header = ({changeBook})=>{
 	const style = {
 		backgroundImage: `url("${image}")`,
@@ -19,7 +25,18 @@ const Header = ({changeBook})=>{
 	}
 
 	return <div className="Book-header" style={style} >
-		<input type="file" accept=".txt" onChange={el=>handlSubmit(el)}/>
+		<Row>
+		<Col>
+
+			<Form.Group controlId="formFileLg" className="mb-3">
+				<Form.Control onChange={el=>handlSubmit(el)} accept=".txt" type="file" on />
+			</Form.Group>
+		</Col>
+		<Col style={{textAlign: 'right'}}>
+			<Button onClick={()=>console.log('save')} variant="warning">Save state</Button>{' '}
+			<ButtonMenu />
+		</Col>
+		</Row>
 		</div>
 }
 

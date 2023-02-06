@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@redux-devtools/core": "^3.13.1"
+    "@redux-devtools/core": "^3.13.1",
+    "react-router-dom": "^6.8.0"
   }
 }
