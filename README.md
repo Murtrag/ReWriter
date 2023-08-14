@@ -1,4 +1,4 @@
-![image](https://github.com/Murtrag/ReWriter/assets/19934843/0bdf1e3d-df00-439f-bb3e-5feba96beec0)The "Speed Reading and Touch Typing Practice Tool" is a web application built
+The "Speed Reading and Touch Typing Practice Tool" is a web application built
 with React.js, Redux, HTML, SASS, and Docker. It allows users to load any text of
 their choice from their local drive and practice touch typing while reading a book.
 The tool provides a distraction-free environment for focused practice and is
