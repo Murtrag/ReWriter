@@ -1,18 +1,18 @@
-import { CHANGE_BOOK, PRESS_KEY, BACK_SPACE, CHANGE_PAGE } from './actions';
-import { splitTextIntoPages } from '../utils';
+import { CHANGE_BOOK, PRESS_KEY, BACK_SPACE, CHANGE_PAGE } from '../actions';
+import { splitTextIntoPages, getUniqueArray } from '../../utils';
 
-function removeDuplicates(arr) {
-	let unique = [];
-	arr.forEach(element => {
-		if (!unique.includes(element)) {
-			unique.push(element);
-		}
-	});
-	return unique;
+const emptyState = {
+	title:"",
+	content:[""] ,
+	page:0,
+	activeLetter:0,
+	incorrect: []
 }
 
-
-const rootReducer = (state={title:"", content:[""] ,page:0, activeLetter:0, incorrect: []}, action)=>{
+function textReducer(
+	state=emptyState,
+	action
+){
 	switch(action.type){
 		case CHANGE_BOOK:
 			return {
@@ -27,12 +27,12 @@ const rootReducer = (state={title:"", content:[""] ,page:0, activeLetter:0, inco
 				...action.payload,
 				activeLetter:0,
 				incorrect: [],
-				
+
 			}
 		case PRESS_KEY:
 			return {
 				...state,
-				incorrect: removeDuplicates([
+				incorrect: getUniqueArray([
 					...state.incorrect,
 					action.payload.incorrect,
 				]),
@@ -49,5 +49,5 @@ const rootReducer = (state={title:"", content:[""] ,page:0, activeLetter:0, inco
 }
 
 export { 
-	rootReducer
+	textReducer
 }

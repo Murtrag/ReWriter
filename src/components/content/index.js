@@ -13,34 +13,6 @@ const Content = ({ data, activeLetter, incorrect, page }) => {
 	const minHeight = 835;
 	const maxHeight = 840;
 
-	// function lowerFont(ref, otherRef, prevHeight=0){
-	// 	try{
-	// 		if (prevHeight === ref.current.clientHeight){
-	// 			fontSize = fontSize + 0.01;
-	// 			ref.current.style.fontSize = `${fontSize}rem`;
-	// 			if (otherRef ===null){
-	// 			}else{
-	// 				lowerFont(otherRef, null, 0)
-	// 			}
-	// 		}
-	// 		if (ref.current.clientHeight >  maxHeight) {
-	// 			prevHeight = ref.current.clientHeight;
-	// 			fontSize = fontSize - 0.01;
-	// 			ref.current.style.fontSize = `${fontSize}rem`;
-	// 			lowerFont(ref, otherRef, prevHeight)
-	// 		}
-	// 	}catch(err){
-	// 		console.log(err)
-	// 	}
-	// }
-
-	// function upperFont(ref){
-	// 	try{
-	// 		if (ref.current.clientHeight <  minHeight) {
-	// 			ref.current.style.fontSize = `2rem`;
-	// 		}
-	// 	}catch(error){}
-	// }
 
 	useEffect(() => {
 		if(leftRef.current.clientHeight !== 0){

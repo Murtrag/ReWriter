@@ -1,6 +1,6 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ButtonMenu from '../../button_menu';
+import { ButtonMenu } from '../../buttons';
 import Candle from './candle';
 
 

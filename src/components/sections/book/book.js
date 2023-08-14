@@ -47,11 +47,11 @@ const Book = ({content,page, activeLetter, pressKey, incorrect, backSpace, chang
 		</div>
 }
 
-const mapStateToProps = state=>({
-	content: state.content,
-	page: state.page,
-	activeLetter: state.activeLetter,
-	incorrect: state.incorrect
+const mapStateToProps = ({textReducer})=>({
+	content: textReducer.content,
+	page: textReducer.page,
+	activeLetter: textReducer.activeLetter,
+	incorrect: textReducer.incorrect
 })
 const mapDispatchToProps = dispatch=>({
 	pressKey: (key, incorrect)=>dispatch(pressKey(key, incorrect)),

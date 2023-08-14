@@ -6,6 +6,7 @@ import Layout from './components/layouts/menu';
 import Menu from './components/sections/menu/index';
 import FromAuthor from './components/sections/menu/from_author';
 import HowToUse from './components/sections/menu/how_to_use';
+import Saves from './components/sections/menu/saves';
 import BookView from './components/sections/book/index';
 import './sass/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,6 +26,7 @@ function App() {
 					  <Route index element={<Menu />} />
 					  <Route path="from-author" element={<FromAuthor />} />
 					  <Route path="how-to-use" element={<HowToUse />} />
+					  <Route path="saves" element={<Saves />} />
 					{/*
 					  <Route path="saves" element={<Saves />} />
 					  <Route path="settings" element={<Settings />} />

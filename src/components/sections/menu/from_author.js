@@ -1,7 +1,8 @@
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import ButtonMenu from '../../button_menu';
+// Sorted
+import { ButtonMenu } from 'components/buttons';
 import Candle from './candle';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const FromAuthor = ()=>{
 	return <article><Row>

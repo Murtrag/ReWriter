@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import ButtonMenu from '../../button_menu';
+import { ButtonMenu, ButtonSave } from '../../buttons';
 
 const Header = ({changeBook})=>{
 	const style = {
@@ -33,7 +33,7 @@ const Header = ({changeBook})=>{
 			</Form.Group>
 		</Col>
 		<Col style={{textAlign: 'right'}}>
-			<Button onClick={()=>console.log('save')} variant="warning">Save state</Button>{' '}
+			<ButtonSave />
 			<ButtonMenu />
 		</Col>
 		</Row>

@@ -45,8 +45,75 @@ function divideString(str) {
 	return [firstHalf, secondHalf];
 }
 
+function getUniqueArray(arr) {
+	let response = [];
+	arr.forEach(element => {
+		if (!response.includes(element)) {
+			response.push(element);
+		}
+	});
+	return response;
+}
+
+
+class LocalStorageArray {
+	constructor(key) {
+		this.key = key;
+	}
+
+	addItem(item) {
+		console.log('itme :', item)
+		let items = this.loadAllItems();
+		const now = new Date()
+		items.push({
+			...item,
+			id: now.getTime(),
+			time: `${now.getDay()}/${now.getMonth()+1}/${now.getFullYear()}\
+			(${now.getHours()}:${now.getMinutes()}:${now.getSeconds()})` 
+
+		});
+		localStorage.setItem(this.key, JSON.stringify(items));
+	}
+
+	getItem(...kwargs) {
+		let items = localStorage.getItem(this.key);
+		items = items ? JSON.parse(items) : [];
+		return items.filter(item => {
+			for (let key in kwargs) {
+				if (item[key] !== kwargs[key]) {
+					return false;
+				}
+			}
+			return true;
+		});
+	}
+
+	loadAllItems() {
+		let items = localStorage.getItem(this.key);
+		return items ? JSON.parse(items) : [];
+	}
+
+	removeItem(kwargs) {
+		let items = this.loadAllItems();
+		let index = items.findIndex(item => item.id === kwargs.id);
+		if (index > -1) {
+			items.splice(index, 1);
+			localStorage.setItem(this.key, JSON.stringify(items));
+		}
+	}
+
+	removeAllItems() {
+		localStorage.removeItem(this.key);
+	}
+}
+
+
+
+
 export {
 	textToHtml,
 	splitTextIntoPages,
-	divideString
+	divideString,
+	getUniqueArray,
+	LocalStorageArray
 }

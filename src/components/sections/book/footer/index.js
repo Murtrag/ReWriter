@@ -17,9 +17,9 @@ const Footer = ({pages, activePage, changePage})=>{
 		</div>
 }
 
-const mapStateToProps = state=>({
-	pages: state.content.map((_,i)=>i),
-	activePage: state.page
+const mapStateToProps = ({textReducer})=>({
+	pages: textReducer.content.map((_,i)=>i),
+	activePage: textReducer.page
 })
 
 const mapDispatchToProps = (dispatch)=>({
